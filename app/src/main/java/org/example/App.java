@@ -1,9 +1,37 @@
 package org.example;
-
 public class App {
     public static void main(String[] args) {
-      System.out.println("This is where you will put the driver program! It will run the source code that you write for the lab.");
-      System.out.println("Create separate files when writing your source code. Don't put all of your source code in this file!");
-      System.out.println("You can delete these println statements and replace them with your driver program.");
+        TodoList todo = new TodoList();
+        System.out.println("Todo List Program");
+
+        todo.add("Finish homework");
+        todo.add("Do laundry");
+        todo.add("Study Java");
+
+        System.out.println();
+        System.out.println("All Tasks:");
+        System.out.println(todo.all());
+
+        todo.complete("Finish homework");
+
+        System.out.println();
+        System.out.println("Completed Tasks:");
+        System.out.println(todo.complete());
+
+        System.out.println();
+        System.out.println("Incomplete Tasks:");
+        System.out.println(todo.incomplete());
+
+        todo.complete("This task does not exist");
+
+        System.out.println();
+        System.out.println("After trying an invalid task:");
+        System.out.println(todo.all());
+
+        todo.clear();
+
+        System.out.println();
+        System.out.println("After clearing:");
+        System.out.println(todo.all());
     }
 }
